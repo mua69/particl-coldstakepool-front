@@ -56,6 +56,15 @@ export class AppComponent implements OnInit {
     'debug': true
   };
 
+    public pdstat: any = {
+	"status":"...",
+	"uptime":"",
+	"peers":"",
+	"last_block":"",
+	"version":"",
+	"staking":""
+    };
+    
   private metrics: any = [
     ];
 
@@ -80,12 +89,16 @@ export class AppComponent implements OnInit {
 
   update(): void {
     this.rpc.getConfig().subscribe(data => {
-      console.log(data);
+      //console.log(data);
       this.config = data;
     });
 
     this.rpc.getJson().subscribe(data => {
       this.api = data;
+    });
+
+    this.rpc.getParticldStat().subscribe(data => {
+      this.pdstat = data;
     });
 
     this.rpc.getMetrics().subscribe((data: any) => {
@@ -219,4 +232,9 @@ export class AppComponent implements OnInit {
   getBlockExplorerUrlForTx(tx: string) {
     return `https://explorer${ environment.testnet ?  '-testnet' : ''}.particl.io/tx/${tx}`;
   }
+
+  getBlockExplorerUrlForAdr(adr: string) {
+    return `https://explorer${ environment.testnet ?  '-testnet' : ''}.particl.io/address/${adr}`;
+  }
+
 }

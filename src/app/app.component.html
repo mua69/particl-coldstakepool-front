@@ -10,11 +10,31 @@
             <img src="assets/img/cold-staking-logo.png" class="cold-staking-logo" alt="Cold Staking Logo">
             <div class="item pool-address">
                 <p class="text-lead">
+                    CRYMEL
+                </p>
+                <p class="text-lead">
                     <span class="blue">PARTICL</span> COLD STAKING POOL
                 </p>
                 <div class="address-string">
                     <span class="white unselectable">{{testnet ? "testnet" : "mainnet"}} POOL ADDRESS:</span>{{ config.pooladdress }}
                 </div>
+            </div>
+            <div class="pooldetail">
+               <h3 class="title">
+                 Operated by an individual from Bavaria, Germany
+               </h3>
+               <h3 class="title">
+                 Please be invited to join and support keeping the Particl network decentralized
+               </h3>
+               <h3 class="title">
+                 <i class="icon icon-cog icon-top"></i>Pool Fee: 2.5% <i class="icon icon-grid icon-top icon-margin-10"></i> Daily Payout
+               </h3>
+	       <h3 class="title">
+		 <a href="https://t.me/CrymelPool" target="_blank">
+                   <img src="assets/icons/telegram.svg" class="icon-github" alt="">Join Telegram group for regular status updates 
+                 </a>
+
+	       </h3>
             </div>
             <section class="intro-details columns">
                 <div class="small-block-grid-2 medium-block-grid-5 large-block-grid-5">
@@ -74,6 +94,8 @@
             <label for="tab3">PENDING PAYMENTS</label>
             <input id="tab4" type="radio" name="tabs" />
             <label for="tab4">LATEST PAYMENTS</label>
+            <input id="tab5" type="radio" name="tabs" />
+            <label for="tab5">PARTICL NODE STATUS</label>
             <div class="hide" id="content1">
                 <table class="table text-left">
                     <thead>
@@ -118,6 +140,17 @@
                             </td>
                         </tr>
                         <tr>
+                          <td>
+			    <i class="icon icon-stake"></i>
+                          </td>
+                          <td>
+                            <b>Reward Address</b>
+                          </td>
+                          <td class="trunc">
+                            <a href="{{getBlockExplorerUrlForAdr(config.rewardaddress)}}" target="_blank">{{ config.rewardaddress }}</a>
+                          </td>
+                        </tr>
+                        <tr>
                             <td>
                                 <i class="icon icon-cog"></i>
                             </td>
@@ -126,17 +159,6 @@
                             </td>
                             <td>
                                 <span class="text-meta">{{config.parameters[0].poolfeepercent}}%</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <i class="icon icon-cog"></i>
-                            </td>
-                            <td>
-                                <b>Stake Bonus</b>
-                            </td>
-                            <td>
-                                <span class="text-meta">{{config.parameters[0].stakebonuspercent}}%</span>
                             </td>
                         </tr>
                         <tr>
@@ -327,6 +349,42 @@
                     </tbody>
                 </table>
             </div>
+            <div class="hide" id="content5">
+                <table class="table text-left">
+                    <tbody>
+		      <tr>
+			<td class="table-shrink">
+                          <i class="icon icon-switch"></i>
+                        </td>
+			<td>Status</td><td><span class="text-meta">{{pdstat.status}}</span></td>
+		      </tr>
+		      <tr>
+                        <td>
+                          <i class="icon icon-server "></i>
+                        </td>
+			<td>Version</td><td><span class="text-meta">{{pdstat.version}}</span></td>
+		      </tr>
+		      <tr>
+                        <td>
+                          <i class="icon icon-server "></i>
+                        </td>
+			<td>Uptime</td><td><span class="text-meta">{{pdstat.uptime}}</span></td>
+		      </tr>
+		      <tr>
+                        <td>
+                          <i class="icon icon-server "></i>
+                        </td>
+			<td>Peers</td><td><span class="text-meta">{{pdstat.peers}}</span></td>
+		      </tr>
+		      <tr>
+			<td>
+                          <i class="icon icon-refresh"></i>
+                        </td>
+			<td>Last Block</td><td><span class="text-meta">{{pdstat.last_block}}</span></td>
+		      </tr>
+                    </tbody>
+                </table>
+            </div>
         </form>
     </div>
 </div>
@@ -344,12 +402,18 @@
                             <a href="https://particl.io" target="_blank">Particl</a> - Privacy-focused Decentralized Applications
                         </p>
                         <p>
-                            <a href="https://github.com/particl/coldstakepool" target="_blank">
-                                <img src="assets/icons/github.svg" class="icon-github icon-blue" alt=""> Particl Cold-Staking Pool
+                            <a href="https://github.com/mua69/coldstakepool" target="_blank">
+                                <img src="assets/icons/github.svg" class="icon-github icon-blue" alt=""> Particl Cold-Staking Pool (forked)
                             </a>
-                            <a href="https://github.com/gerlofvanek/particl-coldstakepool-front" target="_blank">
-                                <img src="assets/icons/github.svg" class="icon-margin-10 icon-github icon-blue" alt=""> Particl Cold-Staking Pool GUI v1.0
+                            <a href="https://github.com/mua69/particl-coldstakepool-front" target="_blank">
+                                <img src="assets/icons/github.svg" class="icon-margin-10 icon-github icon-blue" alt=""> Particl Cold-Staking Pool GUI (forked)
                             </a>
+                            <a href="https://github.com/mua69/stakePoolInfoServer" target="_blank">
+                                <img src="assets/icons/github.svg" class="icon-margin-10 icon-github icon-blue" alt=""> Stakepool Info Server and Telegram Bot
+                            </a>			    
+			    <a href="https://t.me/Femit" target="_blank">
+			      <img src="assets/icons/telegram.svg" class="icon-github icon-margin-10" alt="">Contact 
+			    </a>
                         </p>
                     </div>
                     <!-- please do not remove - thank you! -->

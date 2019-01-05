@@ -1091,6 +1091,7 @@
  /* ========================================================================
     Icons
    ========================================================================== */
+ 
  .icon {
  	color: #03E8B0;
 	font-weight: normal;
@@ -1104,7 +1105,16 @@
  	top: 5px;
  	left: 0px;
  	margin-right: 10px;
+        height: 25px;
  }
+
+ .icon-top {
+ 	position: relative;
+ 	top: 2px;
+ 	left: 0px;
+ 	margin-right: 10px;
+ }
+ 
  
 .icon-margin-10 {
 	margin-left: 10px;
@@ -1198,7 +1208,8 @@
  #tab1:checked ~ #content1,
  #tab2:checked ~ #content2,
  #tab3:checked ~ #content3,
- #tab4:checked ~ #content4 {
+ #tab4:checked ~ #content4,
+ #tab5:checked ~ #content5 {
  	display: block;
  }
  /* ========================================================================

@@ -4,7 +4,8 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false,
-  url: '',
-  testnet: true
+  production: true,
+  url: 'http://particl.crymel.icu/api/pool',
+  infoUrl: 'http://particl.crymel.icu/api/info',
+  testnet: false
 };
