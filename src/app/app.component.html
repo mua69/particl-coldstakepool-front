@@ -67,6 +67,11 @@
                         <div class="amount">{{api.lastpaymentrunheight | number}}</div>
                         <p class="desc ">Latest reward distribution</p>
                     </div>
+                    <div class="item">
+                        <h3 class="title">Staking Interest Rate </h3>
+                        <div class="amount">{{pdstat.actual_rate.toFixed(2) | number }}%</div>
+                        <p class="desc ">Effective staking interest rate averaged over last 100 blocks</p>
+                    </div>
                 </div>
             </section>
         </div>
@@ -232,10 +237,10 @@
                                 <i class="icon icon-stake"></i>
                             </td>
                             <td>
-                                <b>Total Pool Rewards</b>
+                                <b>Total Pool Fees</b>
                             </td>
                             <td>
-                                <span class="text-meta">{{(api.poolrewardtotal / 100000000)  | number:'0.8'}}</span>
+                                <span class="text-meta">{{(api.poolrewardtotal / 100000000)  | number:'0.8'}} PART</span>
                             </td>
                         </tr>
                         <tr>
@@ -243,10 +248,10 @@
                                 <i class="icon icon-stake"></i>
                             </td>
                             <td>
-                                <b>Total Pool Fees</b>
+                                <b>Total Transaction Fees</b>
                             </td>
                             <td>
-                                <span class="text-meta">{{(api.poolfeestotal/ 100000000)  | number:'0.8'}}</span>
+                                <span class="text-meta">{{(api.poolfeestotal/ 100000000)  | number:'0.8'}} PART</span>
                             </td>
                         </tr>
                         <tr>
@@ -254,10 +259,10 @@
                                 <i class="icon icon-send"></i>
                             </td>
                             <td>
-                                <b>Total Pool Rewards Withdrawn</b>
+                                <b>Total Pool Fees Withdrawn</b>
                             </td>
                             <td>
-                                <span class="text-meta">{{(api.poolwithdrawntotal/ 100000000)  | number:'0.8'}}</span>
+                                <span class="text-meta">{{(api.poolwithdrawntotal/ 100000000)  | number:'0.8'}} PART</span>
                             </td>
                         </tr>
                         <tr>
@@ -268,7 +273,7 @@
                                 <b>Total Pooled Coins</b>
                             </td>
                             <td>
-                                <span class="text-meta">{{api.watchonlytotalbalance  | number}}</span>
+                                <span class="text-meta">{{api.watchonlytotalbalance  | number}} PART</span>
                             </td>
                         </tr>
                         <tr>
@@ -279,7 +284,7 @@
                                 <b>Staked Balance</b>
                             </td>
                             <td>
-                                <span class="text-meta">{{api.stakedbalance | number}}</span>
+                                <span class="text-meta">{{api.stakedbalance | number}} PART</span>
                             </td>
                         </tr>
                     </tbody>
