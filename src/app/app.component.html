@@ -1,9 +1,9 @@
 <!-- intro -->
 <section class="intro">
     <div class="container">
-        <div class="logo">
+        <div class="logo" >
             <a href="http://particl.io">
-                <img src="assets/img/particl-logotype.svg" alt="Particl.io" target="_blank">
+                <img src="assets/img/particl-logotype.png" alt="Particl.io" target="_blank">
             </a>
         </div>
         <div class="section text-center">
@@ -21,7 +21,7 @@
             </div>
             <div class="pooldetail">
                <h3 class="title">
-                 Operated by an individual from Bavaria, Germany
+                 Operated by an individual
                </h3>
                <h3 class="title">
                  Please be invited to join and support keeping the Particl network decentralized
@@ -69,7 +69,7 @@
                     </div>
                     <div class="item">
                         <h3 class="title">Staking Interest Rate </h3>
-                        <div class="amount">{{pdstat.actual_rate.toFixed(2) | number }}%</div>
+                        <div class="amount">{{(pdstat.actual_rate*1.0).toFixed(2) | number }}%</div>
                         <p class="desc ">Effective staking interest rate averaged over last 100 blocks</p>
                     </div>
                 </div>
@@ -79,14 +79,47 @@
 </section>
 <!-- intro end -->
 <hr>
-<!-- chart -->
-<section class="chart">
-    <div class="container">
-        <canvas #chartElem id="chart-particl" width="400" height="100">{{chart}}</canvas>
+<div class="container">
+    <div id="chart-tabs">
+        <form>
+            <input id="charts_tab1" type="radio" name="chart_tabs" checked />
+            <label for="charts_tab1">POOLED COINS</label>
+            <input id="charts_tab2" type="radio" name="chart_tabs" />
+            <label for="charts_tab2">HOURLY STAKING RATE</label>
+            <input id="charts_tab3" type="radio" name="chart_tabs" />
+            <label for="charts_tab3">DAILY STAKING RATE</label>
+            <div class="hide" id="charts_tab1_content">
+	      <!-- chart -->
+	      <section class="chart">
+		<div class="container">
+		  <canvas #chartElem id="chart-particl" width="400" height="100">{{chart}}</canvas>
+		</div>
+	      </section>
+	      <!-- chart end -->
+	    </div>
+            <div class="hide" id="charts_tab2_content">
+	      <!-- chart -->
+	      <section class="chart">
+		<div class="container">
+		  <canvas #chartElem1 id="chart-stakingrate-hourly" width="400" height="100">{{stakingRateHourlyChart}}</canvas>
+		</div>
+	      </section>
+	      <!-- chart end -->
+	    </div>
+	    <div class="hide" id="charts_tab3_content">
+	      <!-- chart -->
+	      <section class="chart">
+		<div class="container">
+		  <canvas #chartElem2 id="chart-stakingrate-daily" width="400" height="100">{{stakingRateDailyChart}}</canvas>
+		</div>
+	      </section>
+	      <!-- chart end -->
+	    </div>
+	</form>
     </div>
-</section>
-<!-- chart end -->
+</div>
 <hr>
+
 <!-- table -->
 <div class="container table-height">
     <div id="detail-tabs">

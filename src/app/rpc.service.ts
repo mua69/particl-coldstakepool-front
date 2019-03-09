@@ -34,4 +34,16 @@ export class RpcService {
     return this.http.get(`${this.infoUrl}/stat`);
   }
 
+  getStakingRateHourly() {
+    return this.http.get(`${this.infoUrl}/stakingrate/hourly`);
+  }
+
+  getStakingRateDaily() {
+    return this.http.get(`${this.infoUrl}/stakingrate/daily`);
+  }
+
+  getStakingRate() {
+    return this.http.get(`${this.infoUrl}/stakingrate`);
+  }
+
 }

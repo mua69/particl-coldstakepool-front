@@ -868,7 +868,7 @@
       Chart
    ========================================================================== */
  .chart {
- 	background: #111;
+     background: #0E0E0E;  /*#111;*/
  	padding-top: 70px;
  	padding-bottom: 70px;
  }
@@ -983,8 +983,8 @@
  }
  .logo img {
  	display: block;
- 	width: 110%;
- 	height: auto;
+/* 	width: 110%; */
+ 	height: 100px;
  	padding: 1.3rem 1.3rem;
  }
  /* ========================================================================
@@ -1001,7 +1001,7 @@
  	margin: 0;
  }
  a {
- 	color: #04E8B0;
+     color: #04E8B0;
  }
  a:focus,
  a:hover {
@@ -1064,7 +1064,8 @@
  }
  a {
  	text-decoration: none;
- 	color: #04E8B0;
+ 	/*color: #04E8B0;*/
+	color: #45D492;
  }
  .blue {
  	color: #12AFFF;
@@ -1177,6 +1178,9 @@
  #detail-tabs {
  	margin: 0 auto;
  }
+ #chart-tabs {
+     padding-bottom: 50px;
+ }
  .hide {
  	display: none;
  	padding: 20px 0 0;
@@ -1212,6 +1216,12 @@
  #tab5:checked ~ #content5 {
  	display: block;
  }
+ #charts_tab1:checked ~ #charts_tab1_content,
+ #charts_tab2:checked ~ #charts_tab2_content,
+ #charts_tab3:checked ~ #charts_tab3_content {
+ 	display: block;
+ }
+
  /* ========================================================================
      Table
    ========================================================================== */
