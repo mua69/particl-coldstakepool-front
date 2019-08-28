@@ -72,6 +72,13 @@
                         <div class="amount">{{(pdstat.actual_rate*1.0).toFixed(2) | number }}%</div>
                         <p class="desc ">Effective staking interest rate averaged over last 100 blocks</p>
                     </div>
+                    <div class="item">
+                        <h3 class="title">Marketplace Fee Vote </h3>
+                        <div class="amount">{{pdstat.smsg_fee_rate_target | number:'1.0-8'}}
+			  <small class="hide-for-s">PART</small>
+			</div>
+                        <p class="desc ">Pool's Marketplace fee vote (SMSG fee rate target)</p>
+                    </div>
                 </div>
             </section>
         </div>
@@ -230,6 +237,17 @@
                             </td>
                             <td>
                                 <span class="text-meta">{{config.parameters[0].minoutputvalue}} PART</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i class="icon icon-cog"></i>
+                            </td>
+                            <td>
+                                <b>SMSG Fee Rate Target</b>
+                            </td>
+                            <td>
+                                <span class="text-meta">{{pdstat.smsg_fee_rate_target | number:'1.8'}} PART</span>
                             </td>
                         </tr>
                         <tr>
